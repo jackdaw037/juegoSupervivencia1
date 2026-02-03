@@ -1,0 +1,6 @@
+ System.out.println("-- BIENVENIDO AL APOCALIPSIS\uD83E\uDDDF\u200D♀\uFE0F --");
+        System.out.println("En este mundo despiertas en una gasolinera abandonada.");
+        System.out.println("Al lado de la mesa encuentras ropa limpia, un machete y vendas");
+        System.out.println("Sales de la gasolinera y encuentras un mundo habitado por Zombies.");
+        System.out.println("Ahora estas solo y tu aventura de supervivencia empieza");
+        System.out.println("En este juego tendras que sobrevivir durante " + rondas + " dias en mitad de un apocalipsis.");
