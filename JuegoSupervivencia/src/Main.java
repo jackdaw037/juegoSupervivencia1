@@ -107,7 +107,7 @@ public class Main {
 
 
     public static void verEstado(String nombre) {
-        System.out.println("\n-- ESTADO DE " + nombre + " --");
+        System.out.println("\n-- Estado de " + nombre + " --");
         System.out.println("Vida: " + vida);
         System.out.println("Energía: " + energia);
         System.out.println("Hambre: " + hambre);
@@ -119,6 +119,16 @@ public class Main {
             System.out.println(i + ". " + inventario.get(i));
         }
     }
+
+    /**
+     * Este metodo permite al jugador explorar lugares, encontrar objetos y pelear contra enemigos.
+     * En un dia los lugares no se repiten.
+     * Los enemigos de un lugar no vuelven a aparecer.
+     *Añade el combate por turnos.
+     *
+     * @return.explorar Devuleve cuando ya no hay lugares por explorar.
+     * @try Permite que el juego se rompa si se escribe texto
+     * */
 
     public static void explorar(ArrayList<String> lugares,
                                 ArrayList<String> enemigos,
@@ -183,6 +193,14 @@ public class Main {
         return rand.nextInt(11) + 10;
     }
 
+    /**
+     *El metodo calcula y devuelve el daño que hace un enemigo.
+     *Usa numeoros aleatorios
+     *Devuelve un valor que se le restara a la vida del enemigo.
+     *
+     * @return: si se agrega otro enemigo y este no tiene un ataque definido,este devuelve un valor de ataque determinado.
+     */
+
     public static int ataqueEnemigo(String tipo) {
         switch (tipo.toLowerCase()) {
             case "corredor": return rand.nextInt(8) + 8;
@@ -195,6 +213,11 @@ public class Main {
         }
     }
 
+    /**
+     * Este metodo permite utilizar un objeto detreminado del inventario
+     *
+     *
+     * */
 
     public static void usarObjeto() {
 
@@ -246,6 +269,10 @@ public class Main {
         inventario.remove(opcion);
     }
 
+    /***
+     * Permite que el enemigo al ser derrotado pueda soltar un objeto de forma aleatoria
+     *
+     * */
     public static void lootEnemigo() {
         if (rand.nextInt(100) < 40) {
             String objeto = objetos.get(rand.nextInt(objetos.size()));
@@ -262,6 +289,12 @@ public class Main {
         }
     }
 
+    /**
+     * Este metodo permite que el jugador duerma y recupere energia y aumente el habre.
+     * metodo que permite terminar un dia y pasar al siguiente.
+     *
+     * */
+
     public static void dormir() {
         System.out.println("Duermes y pasa un día...");
         energia = Math.min(100, energia + 30);
@@ -269,4 +302,3 @@ public class Main {
         dias++;
     }
 }
- 
