@@ -24,10 +24,10 @@ public class Main {
         ));
 
         ArrayList<String> enemigos = new ArrayList<>(Arrays.asList(
-                "Corredor", "Gordo", "Mutante"
+                "Corredor", "Bomer", "Mutante", "Esqueleto", "Escupidor","Niño"
         ));
         ArrayList<Integer> vidaEnemigos = new ArrayList<>(Arrays.asList(
-                50, 80, 120
+                50, 80, 120, 30, 60, 75
         ));
 
         System.out.println("-- BIENVENIDO AL APOCALIPSIS ️--");
@@ -186,8 +186,11 @@ public class Main {
     public static int ataqueEnemigo(String tipo) {
         switch (tipo.toLowerCase()) {
             case "corredor": return rand.nextInt(8) + 8;
-            case "gordo": return rand.nextInt(9) + 12;
+            case "Bomer": return rand.nextInt(9) + 12;
             case "mutante": return rand.nextInt(13) + 18;
+            case "Esqueleto" : return rand.nextInt(15) + 25;
+            case "Escupidor" : return rand.nextInt(15) + 35;
+            case "Niño": return rand.nextInt(10) + 15;
             default: return rand.nextInt(10) + 5;
         }
     }
@@ -266,3 +269,4 @@ public class Main {
         dias++;
     }
 }
+ 
